@@ -38,7 +38,6 @@ class DeliveryFactory extends Factory
                     'status' => 2
                 ])->save();
             }
-
         });
     }
 }

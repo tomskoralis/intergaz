@@ -47,9 +47,11 @@ class AddressController extends Controller
                     ]);
             })
             ->select('addresses.id')
-            ->get()->map(function ($value) {
+            ->get()
+            ->map(function ($value) {
                 return $value->id;
-            })->toArray();
+            })
+            ->toArray();
 
         $addresses = Address::whereIn('id', $addressIds)->get();
 

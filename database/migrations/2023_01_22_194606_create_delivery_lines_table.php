@@ -14,7 +14,9 @@ return new class extends Migration
             $table->string('item');
             $table->decimal('price', 14, 2);
             $table->decimal('qty', 16, 8);
-            $table->foreign('delivery_id')->references('id')->on('deliveries');
+            $table->foreign('delivery_id')
+                ->references('id')
+                ->on('deliveries');
         });
     }
 

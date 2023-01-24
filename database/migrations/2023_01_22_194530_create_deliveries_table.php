@@ -13,9 +13,14 @@ return new class extends Migration
             $table->unsignedBigInteger('route_id');
             $table->unsignedBigInteger('address_id');
             $table->integer('type');
-            $table->integer('status')->default(1);
-            $table->foreign('route_id')->references('id')->on('routes');
-            $table->foreign('address_id')->references('id')->on('addresses');
+            $table->integer('status')
+                ->default(1);
+            $table->foreign('route_id')
+                ->references('id')
+                ->on('routes');
+            $table->foreign('address_id')
+                ->references('id')
+                ->on('addresses');
         });
     }
 

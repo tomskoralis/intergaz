@@ -12,7 +12,8 @@ return new class extends Migration
             $table->id();
             $table->date('date');
             $table->string('car_number');
-            $table->integer('status')->default(1);
+            $table->integer('status')
+                ->default(1);
             $table->string('driver_name');
         });
     }

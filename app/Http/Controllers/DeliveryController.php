@@ -31,9 +31,12 @@ class DeliveryController extends Controller
 
     public function recent(): View
     {
-        $deliveries = Delivery::where('status', 2)->get()->sortByDesc(function ($delivery) {
+        $deliveries = Delivery::where('status', 2)
+            ->get()
+            ->sortByDesc(function ($delivery) {
                 return $delivery->date;
-            })->slice(0, self::RECENT_COUNT);
+            })
+            ->slice(0, self::RECENT_COUNT);
 
         return view('deliveries-recent', [
             'count' => self::RECENT_COUNT,

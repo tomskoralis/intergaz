@@ -37,4 +37,3 @@ Route::get('/deliveries-recent', [DeliveryController::class, 'recent'])
 
 Route::get('/clients-inactive', [ClientController::class, 'inactive'])
     ->name('inactive-clients');
-
